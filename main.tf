@@ -13,8 +13,8 @@ provider "azurerm" {
 }
 
 module "service-bus-module" {
-  source = "git::https://github.com/mleisa/assignment.git"
-  namespace_name = "namespace-bb"
+  source             = "git::https://github.com/mleisa/assignment.git"
+  namespace_name     = "namespace-bb"
   queue_name_and_dlq = {
     queue3 = {
       queue_name             = "queue3"
@@ -25,9 +25,9 @@ module "service-bus-module" {
       dead_lettering_enabled = false
     }
   }
-  action_group_name = "team2"
+  action_group_name       = "team2"
   action_group_short_name = "p2-action"
-  alert_rule = {
+  alert_rule              = {
     rule-c-queue3 = {
       alert_name         = "Service-C-Queue3-DLQ"
       metric_name        = "DeadletteredMessages"
